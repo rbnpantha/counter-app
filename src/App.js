@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import NavBar from "./components/navbar";
+import MenuBar from "./components/menubar";
 import Counters from "./components/counters";
 import React, { Component } from "react";
 
@@ -39,6 +40,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
+        <h1>Welcome to my Shopping Cart</h1>
         <NavBar
           totalCounters={this.state.counters.filter(c => c.value > 0).length}
         />
@@ -50,6 +52,7 @@ class App extends Component {
             onDelete={this.handleDelete}
           />
         </main>
+        <MenuBar />
       </React.Fragment>
     );
   }
