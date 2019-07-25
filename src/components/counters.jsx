@@ -11,6 +11,18 @@ class Counters extends Component {
         >
           Reset
         </button>
+        <button
+          onClick={this.props.onRefresh}
+          className="btn btn-primary btn-sm m-2"
+        >
+          Refresh
+        </button>
+        <button
+          onClick={this.props.onAddItem}
+          className="btn btn-primary btn-sm m-2"
+        >
+          Add Item
+        </button>
         {this.props.counters.map(counter => (
           //this counter component raises the delete events and we arenot handling here
           //and we re bubbling that event to parent

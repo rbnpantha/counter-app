@@ -23,6 +23,23 @@ class App extends Component {
     this.setState({ counters });
   };
 
+  handleRefresh = () => {
+    const counters = [
+      { id: 1, value: 0 },
+      { id: 2, value: 0 },
+      { id: 3, value: 0 },
+      { id: 4, value: 0 }
+    ];
+    this.setState({ counters });
+  };
+
+  handleAddItem = () => {
+    const counters = this.state.counters;
+    const nextIndex = counters.length + 1;
+    counters.push({ id: nextIndex, value: 0 });
+    this.setState({ counters });
+  };
+
   handleIncrement = counter => {
     const counters = [...this.state.counters];
     const index = counters.indexOf(counter);
@@ -48,6 +65,8 @@ class App extends Component {
           <Counters
             counters={this.state.counters}
             onReset={this.handleReset}
+            onRefresh={this.handleRefresh}
+            onAddItem={this.handleAddItem}
             onIncrement={this.handleIncrement}
             onDelete={this.handleDelete}
           />
